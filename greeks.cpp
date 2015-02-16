@@ -90,20 +90,3 @@ void RhoPut(double StockPriceAt0, double Sigma, double TimeToMaturity, double St
     double RhoP= -StrikePrice*TimeToMaturity*exp(-RiskFreeRate*TimeToMaturity)*NormalCdfCalc(-d2);
     cout << "The Rho for this call option is: "<<RhoP <<endl;
 }
-int main() {
-    double S0= 18;
-    double T= 4;
-    double K= 1.10;
-    double r= 0.05;
-    double d= 0.03;
-    double sigma= 2.43;
-    CallDelta(S0, sigma, T, K, r, d);
-    PutDelta(S0, sigma, T, K, r, d);
-    StockGamma(S0, sigma, T, K, r, d);
-    ThetaCall(S0, sigma, T, K, r, d);
-    ThetaPut(S0, sigma, T, K, r, d);
-    vega(S0, sigma, T, K, r, d);
-    RhoCall(S0, sigma, T, K, r, d);
-    RhoPut(S0, sigma, T, K, r, d);
-    return 0;
-}
