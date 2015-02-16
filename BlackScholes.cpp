@@ -1,3 +1,5 @@
+//Author: Aishwarya Ketkar
+//Date: 02/15/2015
 #include <iostream> 
 #include <cmath>
 #include <stdio.h>
