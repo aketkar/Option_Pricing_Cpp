@@ -1,3 +1,4 @@
+//Author: Aishwarya Ketkar
 #include <iostream>
 #include <cmath>
 #include <stdio.h>
@@ -50,23 +51,4 @@ double PutCallParity(double StockPriceAt0, double TimeToMaturity, double StrikeP
     return PriceOfPut;
 }
 
-    
-int main() {
-    double S0= 18;
-    double T= 4;
-    double K= 1.10;
-    double r= 0.05;
-    double sigma= 2.43;
-    double callPrice= BlackScholesCall(S0, T, K, r, sigma);
-    cout << "Call price based on BlackScholes model: " << callPrice << endl;
-    double PutPrice= BlackScholesPut(S0, T, K, r, sigma);
-    double Parity= PutCallParity(S0, T, K, r, sigma);
-    double epsilon= 0.00000001;
-    if (fabs(PutPrice- Parity)< epsilon) {
-        cout << "There! Put-Call parity indeed holds!" <<endl;
-    }
-    else {
-        cout << "Not equal!" <<endl;
-    }
-return 0;
-}
+   
