@@ -1,3 +1,5 @@
+//Author: Aishwarya Ketkar
+//MonteCarlo Pricing engine to price plain Vanilla call and put options
 #include <iostream>
 #include <cmath>
 #include <vector>
@@ -32,18 +34,4 @@ double MonteCarloEuroPutPrice(double Sims, double S0, double K, double r, double
 	}
 double newPayoff= exp(-r*T)*(TotalPayoffSum/Sims);
 return newPayoff;
-}
-int main () {
-	double S0 = 21;
-	double T= 1; //time steps
-	double Sims= 100000; //number of simulations
-	double K= 20;
-	double r= 0.05;
-	double sigma= 0.2;
-	double CallPrice= MonteCarloEuroCallPrice(Sims, S0, K, r, T, sigma);
-	cout << "The call price is: "<< CallPrice <<endl;
-	double PutPrice= MonteCarloEuroPutPrice(Sims, S0, K, r, T, sigma);
-	cout << "The put price is: "<< PutPrice <<endl;
-return 0;
-	
 }
